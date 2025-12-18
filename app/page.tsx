@@ -193,7 +193,7 @@ export default function Home() {
     backgroundPosition: "center",
   };
 
-  return 
+  return (
     <div className="relative min-h-screen bg-white">
       <div
         className="pointer-events-none absolute inset-0 -z-10 opacity-60"
