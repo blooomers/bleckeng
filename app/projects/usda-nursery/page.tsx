@@ -3,6 +3,7 @@
 import Navigation from "@/components/Navigation";
 import Link from "next/link";
 import { ArrowRight, MapPin, Sprout, TreePine } from "lucide-react";
+import TerrainMap from "@/components/maps/TerrainMap";
 
 const locations = [
   {
@@ -11,7 +12,8 @@ const locations = [
     location: "Coeur d'Alene, Idaho",
     region: "Region 1",
     path: "/projects/usda-nursery/coeur-dalene",
-    coordinates: { x: 22, y: 15 }, // Approximate % position
+    lat: 47.68,
+    lng: -116.78,
   },
   {
     id: "bessey",
@@ -19,7 +21,8 @@ const locations = [
     location: "Halsey, Nebraska",
     region: "Region 2",
     path: "/projects/usda-nursery/bessey",
-    coordinates: { x: 48, y: 35 },
+    lat: 41.9,
+    lng: -100.27,
   },
   {
     id: "lucky-peak",
@@ -27,7 +30,8 @@ const locations = [
     location: "Boise, Idaho",
     region: "Region 4",
     path: "/projects/usda-nursery/lucky-peak",
-    coordinates: { x: 24, y: 28 },
+    lat: 43.62,
+    lng: -116.21,
   },
   {
     id: "placerville",
@@ -35,7 +39,8 @@ const locations = [
     location: "Camino, California",
     region: "Region 5",
     path: "/projects/usda-nursery/placerville",
-    coordinates: { x: 10, y: 40 },
+    lat: 38.74,
+    lng: -120.67,
   },
   {
     id: "j-herbert-stone",
@@ -43,7 +48,8 @@ const locations = [
     location: "Central Point, Oregon",
     region: "Region 6",
     path: "/projects/usda-nursery/j-herbert-stone",
-    coordinates: { x: 12, y: 25 },
+    lat: 42.38,
+    lng: -122.92,
   },
   {
     id: "bend-seed",
@@ -51,7 +57,8 @@ const locations = [
     location: "Bend, Oregon",
     region: "Region 6",
     path: "/projects/usda-nursery/bend-seed",
-    coordinates: { x: 14, y: 22 },
+    lat: 44.06,
+    lng: -121.32,
   },
   {
     id: "ashe-seed",
@@ -59,7 +66,8 @@ const locations = [
     location: "Brooklyn, Mississippi",
     region: "Region 8",
     path: "/projects/usda-nursery/ashe-seed",
-    coordinates: { x: 65, y: 70 },
+    lat: 31.05,
+    lng: -89.18,
   },
   {
     id: "toumey",
@@ -67,7 +75,8 @@ const locations = [
     location: "Watersmeet, Michigan",
     region: "Region 9",
     path: "/projects/usda-nursery/toumey",
-    coordinates: { x: 62, y: 20 },
+    lat: 46.27,
+    lng: -89.18,
   },
 ];
 
@@ -192,33 +201,7 @@ export default function UsdaNurseryProject() {
 
           {/* Interactive Map with Terrain View */}
           <div className="relative mx-auto mb-24 aspect-[16/9] w-full max-w-5xl overflow-hidden rounded-3xl bg-gray-100">
-            <div className="absolute inset-0">
-              {/* Real terrain map showing natural features and landscapes */}
-              <img
-                src="https://eoimages.gsfc.nasa.gov/images/imagerecords/73000/73909/world.topo.bathy.200412.3x5400x2700.jpg"
-                alt="US Terrain Map"
-                className="w-full h-full object-cover"
-                style={{
-                  objectPosition: "35% 42%",
-                  filter: "contrast(1.1) brightness(0.95) saturate(0.9)",
-                }}
-              />
-            </div>
-
-            {locations.map((loc) => (
-              <Link
-                key={loc.id}
-                href={loc.path}
-                className="absolute z-10 flex h-4 w-4 -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-[#893002] ring-4 ring-white transition-transform hover:scale-150 hover:z-20"
-                style={{
-                  left: `${loc.coordinates.x}%`,
-                  top: `${loc.coordinates.y}%`,
-                }}
-                title={loc.title}
-              >
-                <span className="sr-only">{loc.title}</span>
-              </Link>
-            ))}
+            <TerrainMap locations={locations} />
           </div>
 
           {/* Locations Grid */}

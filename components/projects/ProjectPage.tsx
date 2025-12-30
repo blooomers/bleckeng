@@ -45,10 +45,10 @@ export default function ProjectPage({
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  // Combine all images (hero + gallery)
+  // Combine all images (hero + gallery), filtering out duplicates
   const allImages = [
     ...(project.image ? [project.image] : []),
-    ...(project.additionalImages || []),
+    ...(project.additionalImages || []).filter((img) => img !== project.image),
   ];
 
   // Open lightbox

@@ -1,7 +1,8 @@
 import { projects, Project } from "@/app/projects/data";
 
 export function getProjectsForService(serviceId: string): Project[] {
-  const projectsWithImages = projects.filter((p) => p.image);
+  // Exclude the NWMH program entry (id: 22) as it's a collection page, not a specific project
+  const projectsWithImages = projects.filter((p) => p.image && p.id !== 22);
 
   switch (serviceId) {
     case "civil-engineering":

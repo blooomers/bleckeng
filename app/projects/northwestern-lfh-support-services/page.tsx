@@ -1,12 +1,13 @@
-"use client";
+import { redirect } from "next/navigation";
 
-import ProjectPage from "@/components/projects/ProjectPage";
-import { projects } from "../data";
+export default function NorthwesternLFHSupportServicesRedirect() {
+  redirect("/projects/nwmh/support-services-building");
+}
 
-export default function NorthwesternLFHSupportServicesPage() {
-  const project = projects.find((p) => p.id === 13);
-  if (!project) return null;
-  return <ProjectPage project={project} allProjects={projects} />;
+import { redirect } from "next/navigation";
+
+export default function NorthwesternLFHSupportServicesRedirect() {
+  redirect("/projects/nwmh/support-services-building");
 }
 
 

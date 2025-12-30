@@ -28,12 +28,30 @@ export default function About() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setError(null);
 
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      setSubmitted(true);
       setFormData({
         name: "",
         email: "",
@@ -42,8 +60,15 @@ export default function About() {
         projectType: "",
         message: "",
       });
-      setSubmitted(false);
-    }, 3000);
+
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 3000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to send message");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -240,7 +265,7 @@ export default function About() {
             </div>
             <div className="p-6 bg-gray-50 border border-gray-100 rounded-sm text-center">
               <span className="block text-4xl text-[#893002] mb-2 font-light">
-                5
+                8
               </span>
               <span className="text-sm uppercase tracking-wider text-gray-600 font-light">
                 States Licensed
@@ -256,7 +281,7 @@ export default function About() {
             </div>
             <div className="p-6 bg-gray-50 border border-gray-100 rounded-sm text-center">
               <span className="block text-4xl text-[#893002] mb-2 font-light">
-                100+
+                5000+
               </span>
               <span className="text-sm uppercase tracking-wider text-gray-600 font-light">
                 Projects Completed
@@ -341,7 +366,7 @@ export default function About() {
               Local Roots, National Reach
             </h2>
             <p className="mx-auto max-w-2xl text-base sm:text-lg font-light leading-relaxed text-gray-600">
-              For over 80 years, our deep roots in the Lake Forest region have
+              For over 80 years, our deep roots in the Lake County region have
               made us a trusted partner for municipalities and developers
               throughout Northern Illinois and Southeastern Wisconsin.
             </p>
@@ -402,11 +427,11 @@ export default function About() {
           {/* Additional Content */}
           <div className="max-w-4xl mx-auto space-y-6 text-gray-600 font-light text-base sm:text-lg leading-relaxed">
             <p>
-              With engineering licenses in five states (Illinois, Indiana,
-              Michigan, Minnesota, and Wisconsin), we bring our expertise to
-              projects across the country—from local infrastructure improvements
-              to large-scale national initiatives like the USDA National Nursery
-              System.
+              With engineering licenses in eight states (Illinois, Indiana, Iowa
+              Michigan, Minnesota, Wisconsin, Connecticut, and Florida), we
+              bring our expertise to projects across the country—from local
+              infrastructure improvements to large-scale national initiatives
+              like the USDA National Nursery System.
             </p>
             <p>
               Our project portfolio spans healthcare facilities, municipal
@@ -681,12 +706,19 @@ export default function About() {
                       />
                     </div>
 
+                    {error && (
+                      <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-sm text-sm">
+                        {error}
+                      </div>
+                    )}
+
                     <button
                       type="submit"
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#893002] px-8 py-4 text-sm font-light tracking-wide text-white transition-all duration-300 hover:bg-[#a03a03]"
+                      disabled={isSubmitting}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#893002] px-8 py-4 text-sm font-light tracking-wide text-white transition-all duration-300 hover:bg-[#a03a03] disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Send Message
-                      <Send size={18} strokeWidth={1.5} />
+                      {isSubmitting ? "Sending..." : "Send Message"}
+                      {!isSubmitting && <Send size={18} strokeWidth={1.5} />}
                     </button>
                   </form>
                 )}

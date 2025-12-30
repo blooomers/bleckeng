@@ -140,6 +140,17 @@ export default function Home() {
     {
       id: 1,
       title: "Northwestern Medicine Lake Forest Hospital",
+      subtitle: "Pavilion Expansion",
+      location: "Lake Forest, Illinois",
+      year: "2025",
+      description: "Enhancing the health and wellness of communities.",
+      image:
+        "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/Pavilion-Rendering.png",
+      href: "/projects/nwmh/pavilion",
+    },
+    {
+      id: 2,
+      title: "Northwestern Medicine Lake Forest Hospital",
       subtitle: "Parking Garage",
       location: "Lake Forest, Illinois",
       year: "2024",
@@ -150,7 +161,7 @@ export default function Home() {
       href: "/projects/nwmh/northwestern-parking-garage",
     },
     {
-      id: 2,
+      id: 3,
       title: "USDA National Nursery System",
       subtitle: "Optimization Planning",
       location: "U.S. Forest Service, Various States",
@@ -161,23 +172,13 @@ export default function Home() {
         "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/USDA/Lucky%20Peak/5734200698_e48e24924d.webp",
       href: "/projects/usda-nursery",
     },
-    {
-      id: 3,
-      title: "Northwestern Medicine Lake Forest Hospital",
-      subtitle: "Pavilion Expansion",
-      location: "Lake Forest, Illinois",
-      year: "2024",
-      description: "Enhancing the health and wellness of communities.",
-      image:
-        "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/Pavilion-Rendering.png",
-      href: "/projects/nwmh/pavilion",
-    },
+
     {
       id: 4,
       title: "Waukegan Community Bank",
       subtitle: "Commercial Development",
       location: "Waukegan, Illinois",
-      year: "2024",
+      year: "2023",
       description:
         "Helping to improve your community one development at a time.",
       image:

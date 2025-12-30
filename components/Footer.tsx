@@ -21,7 +21,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/bleck-engineering-co-inc"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[#893002] transition-colors"
@@ -30,7 +30,7 @@ export default function Footer() {
                 <Linkedin size={20} strokeWidth={1.5} />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://twitter.com/BleckEngineer"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[#893002] transition-colors"
@@ -39,7 +39,7 @@ export default function Footer() {
                 <Twitter size={20} strokeWidth={1.5} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/bleckengineering/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[#893002] transition-colors"
@@ -127,4 +127,3 @@ export default function Footer() {
     </footer>
   );
 }
-

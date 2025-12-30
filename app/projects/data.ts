@@ -54,20 +54,70 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    title: "Northwestern Lake Forest Hospital – Campus Revitalization",
+    title: "Northwestern Lake Forest Hospital – Campus Revitalization Project",
     location: "Lake Forest, IL",
     year: "2017",
     categories: ["Healthcare", "Master Planning", "Stormwater"],
     description:
-      "Bleck Engineering provided civil engineering services for a 160-acre campus featuring a new 483,500 square foot state-of-the-art hospital. The project integrated medical care with health and wellness through walking and biking trails and community spaces.",
+      "Bleck Engineering served as Civil Engineer for the 160-acre Northwestern Lake Forest Hospital Campus for over 25 years. In 2011, Bleck began the master planning process for a new 483,500 square foot state-of-the-art hospital on campus, integrating medical care with health and wellness through walking and biking trails and community spaces.\n\nCareful coordination and planning with the Construction Manager was required to maintain 24/7 access to patients, visitors, and staff while building next to an active hospital campus. Site design included a roundabout intersection, a below-grade loading dock approximately 18 feet below grade with a stormwater lift station, and a signature 400-foot long, 12.5-foot tall waterfall separating two stormwater detention ponds (pumped at 30,000 gallons per minute). Bleck utilized BIM during design for clash detection and coordination.",
     scope: [
       "Master Planning",
-      "Drainage Study",
-      "Construction Documents",
+      "Drainage Study & Stormwater Management",
+      "Civil Engineering – Construction Documents",
       "Permitting",
+      "Value Engineering",
+      "Construction Engineering / Administration",
+    ],
+    path: "/projects/nwmh/campus",
+    featured: false,
+    clients: [
+      "Northwestern Medicine and Northwestern Memorial HealthCare",
+      "HGA",
+      "Gensler",
+      "Turner Construction Company",
+    ],
+    awards: [
+      "Illinois Section of American Society of Civil Engineers Outstanding Civil Engineering Achievement Award – Nominated – 2017",
+      "ENR Midwest Health Care Project of the Year – Award of Merit – 2017",
+      "Lake County Stormwater Management Commision – Development of the Year – 2017",
+      "LEED BD+C Healthcare v3 Silver",
+      "Lake Forest Historic Preservation Award – Infill/New Construction – 2018",
+    ],
+    permittingAgencies: [
+      "US Army Corps of Engineers",
+      "Lake County Stormwater Management Commission",
+      "Illinois Department of Transportation",
+      "North Shore Water Reclamation District",
+      "Illinois Environmental Protection Agency",
+      "City of Lake Forest",
+      "McHenry County Soil & Water Conservation District",
+      "Illinois Department of Public Health",
+    ],
+    image:
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/hospital.jpg",
+    additionalImages: [
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/hospital.jpg",
+    ],
+  },
+  {
+    id: 22,
+    title: "Northwestern Medicine — Lake Forest Hospital Campus Program",
+    location: "Lake Forest, IL",
+    year: "1998–Present",
+    categories: ["Healthcare", "Master Planning", "Stormwater"],
+    description:
+      "Bleck Engineering has supported Northwestern Medicine’s Lake Forest Hospital Campus for more than 25 years, providing long-term civil engineering and planning services across a wide range of initiatives.\n\nThis program-level page is an umbrella for the campus work — from the 2017 Campus Revitalization Project and major site circulation improvements, to supporting facilities and access projects — all coordinated around active operations and patient access.",
+    scope: [
+      "Program Support & Master Planning",
+      "Drainage Study & Stormwater Management",
+      "Civil Engineering – Construction Documents",
+      "Permitting & Agency Coordination",
+      "Value Engineering",
+      "Construction Engineering / Administration",
     ],
     path: "/projects/nwmh",
-    featured: true,
+    featured: false,
+    clients: ["Northwestern Medicine and Northwestern Memorial HealthCare"],
     image:
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/hospital.jpg",
     additionalImages: [
@@ -341,7 +391,7 @@ export const projects: Project[] = [
     description:
       "Site engineering for the new support services building and associated Parking Lot 4.",
     scope: ["Healthcare", "Site Development", "Stormwater"],
-    path: "/projects/northwestern-lfh-support-services",
+    path: "/projects/nwmh/support-services-building",
     image:
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/SUPPORT-SERVICES/IMG_4394.jpg",
     additionalImages: [
@@ -499,7 +549,7 @@ export const projects: Project[] = [
       "City of Lake Forest",
       "McHenry County Soil & Water Conservation District",
     ],
-    path: "/projects/northwestern-lfh-route-43-right-in-right-out",
+    path: "/projects/nwmh/route-43",
     image:
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/ROUTE-43/IMG_8983.jpg",
     additionalImages: [

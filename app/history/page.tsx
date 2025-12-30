@@ -103,10 +103,9 @@ export default function History() {
             <div className="space-y-4 text-gray-600 font-light text-lg leading-relaxed">
               <p>
                 In 1945, Henry Bleck and his son John (Jack) founded Bleck
-                Engineering in Lake Forest. This photograph captures the two
-                founders together—a moment frozen in time that marked the
-                beginning of a company built on integrity, precision, and family
-                values.
+                Engineering in Waukegan. This photograph captures the two
+                founders together, that marked the beginning of a company built
+                on integrity, precision, and family values.
               </p>
               <p>
                 Their partnership established the core principles that continue

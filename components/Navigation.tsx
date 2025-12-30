@@ -58,8 +58,8 @@ const services = [
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/services/surveying1.jpg",
   },
   {
-    title: "Construction Admin",
-    href: "/services/construction-administration",
+    title: "Construction Management",
+    href: "/services/construction-management",
     description: "End-to-end project management with one dedicated team.",
     image:
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/services/IMG_3356-2.jpg",

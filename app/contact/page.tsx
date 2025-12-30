@@ -15,13 +15,30 @@ export default function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // console.log("Form submitted:", formData);
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setError(null);
 
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      setSubmitted(true);
       setFormData({
         name: "",
         email: "",
@@ -30,8 +47,15 @@ export default function Contact() {
         projectType: "",
         message: "",
       });
-      setSubmitted(false);
-    }, 3000);
+
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 3000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to send message");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -317,16 +341,24 @@ export default function Contact() {
                     />
                   </div>
 
+                  {error && (
+                    <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-sm text-sm">
+                      {error}
+                    </div>
+                  )}
                   <div className="pt-4">
                     <button
                       type="submit"
-                      className="group flex items-center gap-3 bg-[#893002] px-8 py-4 text-sm font-light tracking-wide text-white transition-all duration-300 hover:bg-gray-900"
+                      disabled={isSubmitting}
+                      className="group flex items-center gap-3 bg-[#893002] px-8 py-4 text-sm font-light tracking-wide text-white transition-all duration-300 hover:bg-gray-900 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Send Message
-                      <ArrowRight
-                        size={16}
-                        className="transition-transform group-hover:translate-x-1"
-                      />
+                      {isSubmitting ? "Sending..." : "Send Message"}
+                      {!isSubmitting && (
+                        <ArrowRight
+                          size={16}
+                          className="transition-transform group-hover:translate-x-1"
+                        />
+                      )}
                     </button>
                   </div>
                 </form>
