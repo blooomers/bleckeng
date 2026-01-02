@@ -107,15 +107,15 @@ ${message}
 </html>
     `.trim();
 
-    // Use the verified domain mail.bleckeng.com for sending
-    // IMPORTANT: Must use mail.bleckeng.com (verified subdomain), not bleckeng.com
+    // Use the verified domain contact.bleckeng.com for sending
+    // IMPORTANT: Must use contact.bleckeng.com (verified subdomain), not bleckeng.com
     const fromEmail =
-      process.env.RESEND_FROM_EMAIL || "noreply@mail.bleckeng.com";
+      process.env.RESEND_FROM_EMAIL || "noreply@contact.bleckeng.com";
 
     // Ensure we're using the verified subdomain
-    if (!fromEmail.includes("@mail.bleckeng.com")) {
+    if (!fromEmail.includes("@contact.bleckeng.com")) {
       console.warn(
-        `Warning: fromEmail ${fromEmail} doesn't use verified domain mail.bleckeng.com`
+        `Warning: fromEmail ${fromEmail} doesn't use verified domain contact.bleckeng.com`
       );
     }
 

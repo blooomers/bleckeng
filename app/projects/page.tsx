@@ -84,7 +84,7 @@ export default function Projects() {
       <Navigation />
 
       {/* Hero Section with Video Background */}
-      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-black pt-32">
+      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-[#893002] pt-32">
         <div className="absolute inset-0 z-0">
           <video
             autoPlay
