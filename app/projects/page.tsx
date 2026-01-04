@@ -352,7 +352,7 @@ export default function Projects() {
 
       {/* Projects Map */}
       {filteredProjects.some((p) => p.lat && p.lng) && (
-        <section className="border-t border-gray-200 bg-white py-16">
+        <section className="border-t border-gray-200 bg-white py-16 hidden">
           <div className="mx-auto max-w-7xl px-8">
             <div className="mb-8">
               <h2 className="mb-2 text-3xl font-light text-gray-900">
