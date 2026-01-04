@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
 
 interface Location {
   id: string;
@@ -31,58 +32,75 @@ export default function TerrainMap({ locations, className = "" }: TerrainMapProp
       return;
     }
 
-    // Initialize map with terrain style
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: "mapbox://styles/mapbox/outdoors-v12", // Terrain/outdoors style
-      center: [-98.5, 39.5], // Center of US
-      zoom: 4,
-      accessToken: token,
-    });
+    // Small delay to ensure container is fully rendered
+    const initMap = () => {
+      if (!mapContainer.current || map.current) return;
 
-    map.current.on("load", () => {
-      // Hide road, label, and other non-terrain layers but keep state boundaries
-      const style = map.current!.getStyle();
-      if (style.layers) {
-        style.layers.forEach((layer: any) => {
-          const layerId = layer.id?.toLowerCase() || "";
-          // Keep state boundaries visible, hide everything else non-terrain
-          const isStateBoundary = 
-            layerId.includes("admin-1") || 
-            layerId.includes("admin_state") ||
-            (layerId.includes("boundary") && layerId.includes("admin"));
-          
-          // Hide all road, street, label, place, and POI layers (but not state boundaries)
-          if (
-            !isStateBoundary &&
-            (layer.type === "symbol" ||
-            layerId.includes("road") ||
-            layerId.includes("street") ||
-            layerId.includes("highway") ||
-            layerId.includes("label") ||
-            layerId.includes("place") ||
-            layerId.includes("poi") ||
-            (layerId.includes("admin") && !layerId.includes("admin-1") && !layerId.includes("admin_state")) ||
-            (layerId.includes("boundary") && !layerId.includes("admin")) ||
-            layerId.includes("country-label"))
-          ) {
-            try {
-              map.current!.setLayoutProperty(layer.id, "visibility", "none");
-            } catch (e) {
-              // Some layers might not support visibility property
+      // Initialize map with terrain style
+      map.current = new mapboxgl.Map({
+        container: mapContainer.current,
+        style: "mapbox://styles/mapbox/outdoors-v12", // Terrain/outdoors style
+        center: [-98.5, 39.5], // Center of US
+        zoom: 4,
+        accessToken: token,
+      });
+
+      map.current.on("load", () => {
+        // Resize map to ensure it renders properly
+        map.current?.resize();
+        
+        // Hide road, label, and other non-terrain layers but keep state boundaries
+        const style = map.current!.getStyle();
+        if (style.layers) {
+          style.layers.forEach((layer: any) => {
+            const layerId = layer.id?.toLowerCase() || "";
+            // Keep state boundaries visible, hide everything else non-terrain
+            const isStateBoundary = 
+              layerId.includes("admin-1") || 
+              layerId.includes("admin_state") ||
+              (layerId.includes("boundary") && layerId.includes("admin"));
+            
+            // Hide all road, street, label, place, and POI layers (but not state boundaries)
+            if (
+              !isStateBoundary &&
+              (layer.type === "symbol" ||
+              layerId.includes("road") ||
+              layerId.includes("street") ||
+              layerId.includes("highway") ||
+              layerId.includes("label") ||
+              layerId.includes("place") ||
+              layerId.includes("poi") ||
+              (layerId.includes("admin") && !layerId.includes("admin-1") && !layerId.includes("admin_state")) ||
+              (layerId.includes("boundary") && !layerId.includes("admin")) ||
+              layerId.includes("country-label"))
+            ) {
+              try {
+                map.current!.setLayoutProperty(layer.id, "visibility", "none");
+              } catch (e) {
+                // Some layers might not support visibility property
+              }
             }
-          }
-        });
-      }
-      setMapLoaded(true);
-    });
+          });
+        }
+        setMapLoaded(true);
+      });
 
-    // Add navigation controls
-    map.current.addControl(new mapboxgl.NavigationControl(), "top-right");
+      // Add navigation controls
+      map.current.addControl(new mapboxgl.NavigationControl(), "top-right");
+    };
+
+    // Use requestAnimationFrame to ensure DOM is ready
+    const timeoutId = setTimeout(() => {
+      requestAnimationFrame(initMap);
+    }, 0);
 
     // Cleanup
     return () => {
-      map.current?.remove();
+      clearTimeout(timeoutId);
+      if (map.current) {
+        map.current.remove();
+        map.current = null;
+      }
     };
   }, []);
 
@@ -147,7 +165,7 @@ export default function TerrainMap({ locations, className = "" }: TerrainMapProp
       arrow.style.borderTop = "6px solid #893002";
       tooltip.appendChild(arrow);
       
-      // Create the pin element - centered at 0,0
+      // Create the pin element - positioned absolutely within wrapper
       const el = document.createElement("div");
       el.className = "custom-marker";
       el.style.width = "16px";
@@ -155,7 +173,6 @@ export default function TerrainMap({ locations, className = "" }: TerrainMapProp
       el.style.borderRadius = "50%";
       el.style.backgroundColor = "#893002";
       el.style.border = "4px solid white";
-      el.style.cursor = "pointer";
       el.style.boxShadow = "0 2px 4px rgba(0,0,0,0.2)";
       el.style.transition = "transform 0.2s";
       el.style.transformOrigin = "center center";
@@ -167,6 +184,7 @@ export default function TerrainMap({ locations, className = "" }: TerrainMapProp
       wrapper.appendChild(el);
 
       // Add hover events to wrapper so tooltip works when hovering anywhere on marker
+      // The wrapper stays fixed, only the inner element scales
       wrapper.addEventListener("mouseenter", () => {
         el.style.transform = "scale(1.5)";
         tooltip.style.opacity = "1";

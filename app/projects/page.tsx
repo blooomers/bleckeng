@@ -21,6 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import TerrainMap from "@/components/maps/TerrainMap";
 
 export default function Projects() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -99,7 +100,6 @@ export default function Projects() {
             />
           </video>
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent  via-transparent to-white" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-8 text-center">
@@ -349,6 +349,37 @@ export default function Projects() {
           )}
         </div>
       </section>
+
+      {/* Projects Map */}
+      {filteredProjects.some((p) => p.lat && p.lng) && (
+        <section className="border-t border-gray-200 bg-white py-16">
+          <div className="mx-auto max-w-7xl px-8">
+            <div className="mb-8">
+              <h2 className="mb-2 text-3xl font-light text-gray-900">
+                Project Locations
+              </h2>
+              <p className="max-w-2xl font-light text-gray-600">
+                Explore our projects on the map below. Click on any marker to
+                view project details.
+              </p>
+            </div>
+            <div className="rounded-lg overflow-hidden border border-gray-200 bg-white shadow-sm">
+              <TerrainMap
+                locations={filteredProjects
+                  .filter((p) => p.lat && p.lng)
+                  .map((p) => ({
+                    id: p.id.toString(),
+                    title: p.title,
+                    lat: p.lat!,
+                    lng: p.lng!,
+                    path: p.path || "#",
+                  }))}
+                className="h-[600px]"
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA Section */}
       <section className="bg-[#893002] py-24">

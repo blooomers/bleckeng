@@ -77,10 +77,25 @@ export default function Home() {
     const video = videoRef.current;
     if (!video) return;
 
+    // Ensure video is muted for autoplay (required for mobile)
+    video.muted = true;
+
+    // Function to attempt playing the video
+    const attemptPlay = async () => {
+      try {
+        await video.play();
+      } catch (error) {
+        // Autoplay was prevented, which is fine - user interaction may be needed
+        // The video will still show the poster image
+        console.log("Video autoplay prevented:", error);
+      }
+    };
+
     // Check if video is already ready (cached)
     if (video.readyState >= 3) {
       setIsVideoLoaded(true);
       setIsBuffering(false);
+      attemptPlay();
       return;
     }
 
@@ -103,16 +118,20 @@ export default function Home() {
       setIsBuffering(true);
     };
 
-    const handleCanPlay = () => {
+    const handleCanPlay = async () => {
       setIsBuffering(false);
       setIsVideoLoaded(true);
       setShowLoadingUI(false);
+      // Attempt to play when video can play (important for mobile)
+      await attemptPlay();
     };
 
-    const handleLoadedData = () => {
+    const handleLoadedData = async () => {
       setIsVideoLoaded(true);
       setIsBuffering(false);
       setShowLoadingUI(false);
+      // Attempt to play when data is loaded
+      await attemptPlay();
     };
 
     video.addEventListener("progress", handleProgress);
@@ -139,14 +158,15 @@ export default function Home() {
   const recentProjects = [
     {
       id: 1,
-      title: "Northwestern Medicine Lake Forest Hospital",
-      subtitle: "Pavilion Expansion",
+      title: "McKinley Condominium Residences",
+      subtitle: "Residential Development",
       location: "Lake Forest, Illinois",
-      year: "2025",
-      description: "Enhancing the health and wellness of communities.",
+      year: "2018-2026",
+      description:
+        "Premier downtown Lake Forest homes offering luxury living just steps from local dining, shops, parks, and commuter transit.",
       image:
-        "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/Pavilion-Rendering.png",
-      href: "/projects/nwmh/pavilion",
+        "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/MCKINLEY/GA5A4944.jpg",
+      href: "/projects/mckinley-condominium-development",
     },
     {
       id: 2,
@@ -154,11 +174,10 @@ export default function Home() {
       subtitle: "Parking Garage",
       location: "Lake Forest, Illinois",
       year: "2024",
-      description:
-        "Providing site civil services to enhance the patient and visitor experience.",
+      description: "",
       image:
         "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/parkinggarage.jpg",
-      href: "/projects/nwmh/northwestern-parking-garage",
+      href: "/projects/nwmh/parking-garage",
     },
     {
       id: 3,
@@ -236,7 +255,7 @@ export default function Home() {
             onError={handleVideoError}
           >
             <source
-              src="https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/landing.mp4"
+              src="https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/landingpage-c.mp4"
               type="video/mp4"
             />
           </video>

@@ -18,6 +18,7 @@ import {
   FileText,
 } from "lucide-react";
 import { Project } from "@/app/projects/data";
+import ProjectMap from "@/components/maps/ProjectMap";
 
 interface ProjectPageProps {
   project: Project;
@@ -45,10 +46,10 @@ export default function ProjectPage({
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  // Combine all images (hero + gallery), filtering out duplicates
+  // Combine all images (hero + gallery)
   const allImages = [
     ...(project.image ? [project.image] : []),
-    ...(project.additionalImages || []).filter((img) => img !== project.image),
+    ...(project.additionalImages || []),
   ];
 
   // Open lightbox
@@ -106,7 +107,17 @@ export default function ProjectPage({
       {/* Hero Section */}
       <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden bg-white pt-32">
         <div className="absolute inset-0 z-0">
-          {project.image ? (
+          {project.video ? (
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="h-full w-full object-cover"
+            >
+              <source src={project.video} type="video/mp4" />
+            </video>
+          ) : project.image ? (
             <div
               className="relative h-full w-full cursor-pointer"
               onClick={() => openLightbox(0)}
@@ -117,15 +128,13 @@ export default function ProjectPage({
                 fill
                 className="object-cover transition-opacity hover:opacity-90"
                 priority
-                unoptimized
-                onError={(e) => {
-                  console.error(`Failed to load hero image: ${project.image}`);
-                }}
               />
             </div>
           ) : (
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#89300208_1px,transparent_1px),linear-gradient(to_bottom,#89300208_1px,transparent_1px)] bg-[size:6rem_6rem]" />
           )}
+          {/* Gradient Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-8 w-full">
@@ -308,15 +317,33 @@ export default function ProjectPage({
                       alt={`${project.title} - Image ${index + 1}`}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      unoptimized
-                      onError={(e) => {
-                        console.error(`Failed to load image: ${imageUrl}`);
-                      }}
                     />
                   </div>
                 );
               })}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* Project Location Map */}
+      {project.lat && project.lng && (
+        <section className="border-t border-gray-100 bg-gray-50 py-16">
+          <div className="mx-auto max-w-7xl px-8">
+            <h2 className="mb-8 text-2xl font-light text-gray-900">
+              Project Location
+            </h2>
+            <div className="rounded-lg overflow-hidden border border-gray-200 bg-white shadow-sm">
+              <ProjectMap
+                lat={project.lat}
+                lng={project.lng}
+                title={project.title}
+                className="h-[500px]"
+              />
+            </div>
+            <p className="mt-4 text-sm font-light text-gray-600">
+              {project.location}
+            </p>
           </div>
         </section>
       )}
@@ -451,12 +478,6 @@ export default function ProjectPage({
                 fill
                 className="object-contain"
                 priority
-                unoptimized
-                onError={(e) => {
-                  console.error(
-                    `Failed to load lightbox image: ${allImages[lightboxIndex]}`
-                  );
-                }}
               />
             </div>
           </div>

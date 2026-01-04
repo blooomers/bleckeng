@@ -21,12 +21,15 @@ export interface Project {
   description: string;
   scope: string[];
   image?: string;
+  video?: string;
   additionalImages?: string[];
   path?: string;
   featured?: boolean;
   awards?: string[];
   clients?: string[];
   permittingAgencies?: string[];
+  lat?: number;
+  lng?: number;
 }
 
 export const projects: Project[] = [
@@ -54,93 +57,44 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    title: "Northwestern Lake Forest Hospital – Campus Revitalization Project",
+    title: "Northwestern Lake Forest Hospital – Campus Revitalization",
     location: "Lake Forest, IL",
     year: "2017",
     categories: ["Healthcare", "Master Planning", "Stormwater"],
     description:
-      "Bleck Engineering served as Civil Engineer for the 160-acre Northwestern Lake Forest Hospital Campus for over 25 years. In 2011, Bleck began the master planning process for a new 483,500 square foot state-of-the-art hospital on campus, integrating medical care with health and wellness through walking and biking trails and community spaces.\n\nCareful coordination and planning with the Construction Manager was required to maintain 24/7 access to patients, visitors, and staff while building next to an active hospital campus. Site design included a roundabout intersection, a below-grade loading dock approximately 18 feet below grade with a stormwater lift station, and a signature 400-foot long, 12.5-foot tall waterfall separating two stormwater detention ponds (pumped at 30,000 gallons per minute). Bleck utilized BIM during design for clash detection and coordination.",
+      "Bleck Engineering provided civil engineering services for a 160-acre campus featuring a new 483,500 square foot state-of-the-art hospital. The project integrated medical care with health and wellness through walking and biking trails and community spaces.",
     scope: [
       "Master Planning",
-      "Drainage Study & Stormwater Management",
-      "Civil Engineering – Construction Documents",
+      "Drainage Study",
+      "Construction Documents",
       "Permitting",
-      "Value Engineering",
-      "Construction Engineering / Administration",
-    ],
-    path: "/projects/nwmh/campus",
-    featured: false,
-    clients: [
-      "Northwestern Medicine and Northwestern Memorial HealthCare",
-      "HGA",
-      "Gensler",
-      "Turner Construction Company",
-    ],
-    awards: [
-      "Illinois Section of American Society of Civil Engineers Outstanding Civil Engineering Achievement Award – Nominated – 2017",
-      "ENR Midwest Health Care Project of the Year – Award of Merit – 2017",
-      "Lake County Stormwater Management Commision – Development of the Year – 2017",
-      "LEED BD+C Healthcare v3 Silver",
-      "Lake Forest Historic Preservation Award – Infill/New Construction – 2018",
-    ],
-    permittingAgencies: [
-      "US Army Corps of Engineers",
-      "Lake County Stormwater Management Commission",
-      "Illinois Department of Transportation",
-      "North Shore Water Reclamation District",
-      "Illinois Environmental Protection Agency",
-      "City of Lake Forest",
-      "McHenry County Soil & Water Conservation District",
-      "Illinois Department of Public Health",
-    ],
-    image:
-      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/hospital.jpg",
-    additionalImages: [
-      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/hospital.jpg",
-    ],
-  },
-  {
-    id: 22,
-    title: "Northwestern Medicine — Lake Forest Hospital Campus Program",
-    location: "Lake Forest, IL",
-    year: "1998–Present",
-    categories: ["Healthcare", "Master Planning", "Stormwater"],
-    description:
-      "Bleck Engineering has supported Northwestern Medicine’s Lake Forest Hospital Campus for more than 25 years, providing long-term civil engineering and planning services across a wide range of initiatives.\n\nThis program-level page is an umbrella for the campus work — from the 2017 Campus Revitalization Project and major site circulation improvements, to supporting facilities and access projects — all coordinated around active operations and patient access.",
-    scope: [
-      "Program Support & Master Planning",
-      "Drainage Study & Stormwater Management",
-      "Civil Engineering – Construction Documents",
-      "Permitting & Agency Coordination",
-      "Value Engineering",
-      "Construction Engineering / Administration",
     ],
     path: "/projects/nwmh",
-    featured: false,
-    clients: ["Northwestern Medicine and Northwestern Memorial HealthCare"],
+    featured: true,
     image:
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/hospital.jpg",
     additionalImages: [
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/hospital.jpg",
     ],
+    lat: 42.2565633343371,
+    lng: -87.86575969050139,
   },
   {
     id: 3,
     title: "Fort Sheridan Ravine & Coastal Restoration",
-    location: "Along Lake Michigan in Lake Forest & Highland Park, IL",
+    location: "Lake Forest & Highland Park, IL",
     year: "2015",
-    categories: ["Surveying", "Restoration", "Stormwater"],
+    categories: ["Restoration", "Surveying", "Stormwater"],
     description:
-      "In 2015, John Keno & Company was awarded a 5-year construction contract for ravine and coastal restoration by the U.S. Army Corps of Engineers. John Keno in turn looked to Bleck to layout new ravine thread lines, stone step pools, rock riffles, earth retaining structures, and walkways. As part of their contract with the Army the contractor was required to submit shop drawings for riprap that were sized and signed by a professional engineer. Bleck was able to leverage their knowledge of the immediate watershed in order to get the proper sizing of the stone to keep the construction project on schedule. The Fort Sheridan Ravine and Coastal Section 506 Great Lakes Fishery and Ecosystem Restoration Project spanned across four main ravines and 1.5 miles of coast line on Lake Michigan.",
+      "Multi-year project providing surveying and civil engineering services for ravine and coastal restoration along Lake Michigan. Work included new ravine thread lines, stone step pools, and rock riffles to stabilize the area.",
     scope: [
-      "Supplemental Topographic Survey",
-      "Construction Staking and Layout",
-      "Civil Engineering – Shop Drawings & Design Calculations",
-      "Stormwater Management",
+      "Surveying services",
+      "Ravine stabilization design",
+      "Coastal restoration planning",
+      "Environmental coordination",
     ],
     path: "/projects/fort-sheridan-ravine",
     featured: true,
-    clients: ["John Keno & Company"],
     image:
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/FORT-SHERIDAN-RAVINE/Fort-Sheridan-Surveying-1.jpg",
     additionalImages: [
@@ -149,6 +103,8 @@ export const projects: Project[] = [
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/FORT-SHERIDAN-RAVINE/Fort-Sheridan-Surveying-4.jpg",
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/FORT-SHERIDAN-RAVINE/Fort-Sheridan-Surveying-5.jpg",
     ],
+    lat: 42.223072296242265,
+    lng: -87.80718409552595,
   },
   {
     id: 4,
@@ -176,6 +132,8 @@ export const projects: Project[] = [
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/FOREST-PARK/forest-park1.jpg",
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/FOREST-PARK/forest-park2.jpg",
     ],
+    lat: 42.25208379434655,
+    lng: -87.82024197792292,
   },
   {
     id: 5,
@@ -206,11 +164,13 @@ export const projects: Project[] = [
       "Chicago Building Congress – New Construction Suburbs – Merit Award Winner 2008",
       "Midwest Construction – Best of 2007",
     ],
+    lat: 42.1581,
+    lng: -87.7794,
   },
   {
     id: 6,
     title: "Lake Forest Academy – Athletic Field Improvements",
-    location: "Lake Forest, IL",
+    location: "1500 W Kennedy Rd, Lake Forest, IL 60045",
     year: "2018",
     categories: ["Recreation"],
     description:
@@ -236,6 +196,8 @@ export const projects: Project[] = [
       "Lake County Stormwater Management Commission",
       "City of Lake Forest",
     ],
+    lat: 42.25145995377969,
+    lng: -87.89255396112092,
     path: "/projects/lake-forest-academy-athletic-field",
     image: "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/LFA/lfa.jpg",
     additionalImages: [
@@ -309,6 +271,8 @@ export const projects: Project[] = [
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/WAUKEGAN-MUNICIPAL-BEACH/DSC01800.jpg",
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/WAUKEGAN-MUNICIPAL-BEACH/DSC01937.jpg",
     ],
+    lat: 42.36309242759866,
+    lng: -87.81644045157763,
   },
   {
     id: 9,
@@ -331,18 +295,10 @@ export const projects: Project[] = [
     path: "/projects/regents-row",
     image:
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/REGENTS-ROW/L1230305.jpg",
+    lat: 42.25820116969312,
+    lng: -87.84189252308656,
   },
-  {
-    id: 10,
-    title: "Northwestern Medicine Grayslake – ASTC Parking Lot",
-    location: "Grayslake, IL",
-    year: "2016",
-    categories: ["Healthcare", "Transportation"],
-    description:
-      "Rehabilitation design and build for the Ambulatory Surgery Treatment Center parking facilities.",
-    scope: ["Design/Build", "Healthcare", "Pavement Design"],
-    path: "/projects/northwestern-medicine-grayslake-astc",
-  },
+
   {
     id: 11,
     title: "Pioneer Park Wetland Restoration",
@@ -364,7 +320,10 @@ export const projects: Project[] = [
     path: "/projects/pioneer-park-wetland-restoration",
     image:
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/PIONEER-PARK/Pioneer-Park-1.jpg",
+    lat: 41.75446013793717,
+    lng: -88.13672295526236,
   },
+
   {
     id: 12,
     title: "Lake Forest Metra Station",
@@ -381,6 +340,8 @@ export const projects: Project[] = [
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/LF-METRA/L1230335.jpg",
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/LF-METRA/L1230468.jpg",
     ],
+    lat: 42.25236683309514,
+    lng: -87.83988216340724,
   },
   {
     id: 13,
@@ -391,13 +352,15 @@ export const projects: Project[] = [
     description:
       "Site engineering for the new support services building and associated Parking Lot 4.",
     scope: ["Healthcare", "Site Development", "Stormwater"],
-    path: "/projects/nwmh/support-services-building",
+    path: "/projects/northwestern-lfh-support-services",
     image:
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/SUPPORT-SERVICES/IMG_4394.jpg",
     additionalImages: [
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/SUPPORT-SERVICES/IMG_4445.jpg",
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/SUPPORT-SERVICES/IMG_84011.jpg",
     ],
+    lat: 42.25522909503664,
+    lng: -87.86943868516082,
   },
   {
     id: 14,
@@ -488,6 +451,8 @@ export const projects: Project[] = [
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/DALITSCH-POND/Dalitsch-Pond-1-1.jpg",
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/DALITSCH-POND/IMG_1603.jpg",
     ],
+    lat: 42.25690286286518,
+    lng: -87.89746375126575,
   },
 
   {
@@ -549,75 +514,167 @@ export const projects: Project[] = [
       "City of Lake Forest",
       "McHenry County Soil & Water Conservation District",
     ],
-    path: "/projects/nwmh/route-43",
+    path: "/projects/northwestern-lfh-route-43-right-in-right-out",
     image:
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/ROUTE-43/IMG_8983.jpg",
     additionalImages: [
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/ROUTE-43/IMG_8982.jpg",
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/ROUTE-43/IMG_8987.jpg",
     ],
+    lat: 42.256098802165596,
+    lng: -87.87173578051274,
   },
   {
     id: 20,
     title: "Recycled Waste Materials Transfer Station",
-    location: "1381 Kennedy Road, Lake Forest, IL",
-    year: "2008",
-    categories: ["Municipal", "Surveying"],
+    location: "Illinois",
+    year: "2016",
+    categories: ["Commercial"],
     description:
-      "After receiving feedback from citizens on how the city could increase their dedication to the environment and sustainability, the City of Lake Forest decided to expand their recycling services. This expansion required the need to make a new recycled waste materials transfer station on city property. The idea behind this transfer station is that existing city garbage trucks could be reused and solely dedicated to collecting recycled materials. The trucks would all dump the recycled material at one location where it would then be collected and moved into a tractor trailer. This reduces the carbon footprint of the operation by only having one truck leave the city limits instead of each collection vehicle. Bleck designed the station so that a front end loader could push the recycled material up a ramp and into a tractor trailer. The area was surrounded by netting to reduce the amount of debris leaving the area. The weigh scale for the trucks is powered by solar energy.",
+      "Civil engineering services for a recycled waste materials transfer station facility.",
     scope: [
-      "Surveying",
       "Civil Engineering – Construction Documents",
-      "Site Grading",
-      "Site Utilities",
+      "Site Development",
+      "Permitting",
     ],
     path: "/projects/recycled-waste-materials-transfer-station",
-    clients: ["City of Lake Forest"],
     image:
-      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/RECYCLED-WASTE/LF-Transfer-Station-3.jpg",
-    additionalImages: [
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/RECYCLED-WASTE/LF-Transfer-Station-1.jpg",
+    additionalImages: [
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/RECYCLED-WASTE/LF-Transfer-Station-3.jpg",
     ],
   },
   {
     id: 21,
-    title: "Northwestern Medicine Grayslake Outpatient",
-    location: "1475 Belivdere Road, Grayslake, IL",
-    year: "2004",
+    title: "Northwestern Medicine Grayslake – Outpatient Facility",
+    location: "Grayslake, IL",
+    year: "TBD",
     categories: ["Healthcare"],
     description:
-      "Bleck Engineering has been involved with the Northwestern Lake Forest Hospital Grayslake Campus from the initial 136,000 square foot Outpatient and Acute Care Center built in 2004, to its Free Standing Emergency Center in 2009, Ambulatory and Surgery Treatment Center, and Cancer Care Center completed in 2011, and site access improvements to Illinois Route 120 in 2015. The campus was designed utilizing best management practices in conservation and sustainable design. Recent additions to the Hospital are LEED Silver Certified. One of the main features of Northwestern Grayslake Hospital is the native landscape. The campus was designed utilizing best management practices in conservation and sustainable design for the treatment of water quality and reduction in runoff quantity. Bleck Engineering designed a series of measures to reduce stormwater volumes and associated pollutant loads (nitrogen, phosphorus, sediment, road salt, etc.) through an innovative stormwater management concept. This was the one of the first major installation of the Stormwater Treatment Train in Lake County. The system is composed of open swales with deep rooted native vegetation for stormwater conveyance, upland prairie bio‐filtration, preservation of wetlands, settling basins and open water detention ponds. Working in combination, these methods increase opportunities for pollutant removal through biological and mechanical means, while significantly reducing the rate and volume of stormwater runoff.",
+      "Site civil engineering services for Northwestern Medicine's outpatient facility in Grayslake.",
     scope: [
-      "Surveying",
+      "Site Development",
+      "Healthcare",
       "Civil Engineering – Construction Documents",
-      "Stormwater Management",
-      "Site Utilities",
-      "IL Route 120 Highway Access and Improvements",
-      "Internal Roads",
-      "Parking lots",
       "Permitting",
-      "Construction Administration",
     ],
     path: "/projects/northwestern-medicine-grayslake-outpatient",
-    clients: [
-      "Northwestern Lake Forest Hospital",
-      "Plunkett Raysich Architects",
-      "Pepper Construction",
-    ],
-    permittingAgencies: [
-      "Village of Grayslake",
-      "Lake County",
-      "Lake County Public Works",
-      "IEPA",
-      "IDOT",
-      "Lake County Stormwater Management",
-      "U.S. Army Corps of Engineers",
-    ],
     image:
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/GRAYSLAKE-OUTPATIENT/L1240074.jpg",
     additionalImages: [
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/GRAYSLAKE-OUTPATIENT/L1240081.jpg",
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/GRAYSLAKE-OUTPATIENT/L1240094.jpg",
     ],
+    lat: 42.33852251009631,
+    lng: -88.01566265413803,
+  },
+  {
+    id: 22,
+    title: "Northwestern Medicine Lake Forest Hospital",
+    location: "Lake Forest, IL",
+    year: "2012-2026",
+    categories: ["Healthcare", "Master Planning"],
+    description:
+      "A comprehensive program-level overview of long-term civil engineering and planning support for the Northwestern Medicine Lake Forest Hospital campus. This program encompasses master planning, access improvements, supporting facilities, and major capital work spanning over 25 years of campus support. The program has maintained active operations during all construction phases while providing master planning, civil design, and construction administration support.",
+    scope: [
+      "Master Planning",
+      "Campus Planning",
+      "Civil Engineering – Construction Documents",
+      "Construction Administration",
+      "Stormwater Management",
+      "Site Development",
+      "Permitting",
+      "Value Engineering",
+    ],
+    clients: ["Northwestern Medicine & Northwestern Memorial Healthcare"],
+    path: "/projects/nwmh",
+    image:
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/exterior_rendering_1_-_6.1.2022.png",
+    additionalImages: [
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/GA5A4676-2.jpg",
+    ],
+    featured: true,
+  },
+  {
+    id: 23,
+    title: "Waukegan Community Bank",
+    location: "Waukegan, IL",
+    year: "2023",
+    categories: ["Commercial"],
+    description:
+      "Commercial development project for Waukegan Community Bank, helping to improve the community one development at a time.",
+    scope: [
+      "Site Development",
+      "Civil Engineering – Construction Documents",
+      "Commercial Development",
+      "Permitting",
+    ],
+    path: "/projects/waukegan-bank",
+    image:
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/WAUKEGAN-COMMUNITY-BANK/waukegan-bank.png",
+    lat: 42.37071067216443,
+    lng: -87.86645021773687,
+  },
+  {
+    id: 24,
+    title: "McKinley Condominium Residences",
+    location: "705, 711 & 725 North McKinley Road, Lake Forest, IL",
+    year: "2018-2026",
+    categories: ["Residential"],
+    description:
+      "The McKinley Condominium Residences are a collection of premier downtown Lake Forest homes offering luxury living just steps from local dining, shops, parks, and commuter transit.\n\nProject Highlights:\n\n725 North McKinley Road: Phase 1 (2018) - 14 unit condominium\n\n705 North McKinley Road: Phase 2 (2020) - 6 unit condominium building\n\n711 North McKinley Road: Phase 3 (2024) - 6 unit condominium\n\n363 Westminster: Phase 4 (2025) - Single Family Home\n\n375 Westminster: Phase 5 (2026) - Single Family Home\n\nAdditional Features:\n• Prime downtown Lake Forest location with unsurpassed walkability\n• Strong neighborhood character with easy access to shops, restaurants, and transit\n• Architectural coordination with the surrounding context\n\nThese McKinley addresses represent a range of condominium living options within Lake Forest's lively downtown — from boutique multi-unit residences to smaller upscale buildings offering exceptional proximity to community amenities.",
+    scope: [
+      "Surveying",
+      "Topographic Survey",
+      "Civil Engineering – Construction Documents",
+      "Site Development",
+      "Residential Development",
+      "Multi-Phase Development",
+      "Architectural Coordination",
+      "Permitting",
+      "Construction Engineering / Administration",
+      "Construction Staking and Layout",
+    ],
+    path: "/projects/mckinley-condominium-development",
+    image:
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/MCKINLEY/GA5A4944.jpg",
+    video:
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/MCKINLEY/mckinley.mp4",
+    additionalImages: [
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/MCKINLEY/GA5A4957-2.jpg",
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/MCKINLEY/GA5A5002.jpg",
+    ],
+    lat: 42.2529,
+    lng: -87.8387,
+  },
+  {
+    id: 25,
+    title: "Northwestern Medicine Lake Forest Hospital – Parking Garage",
+    location: "Lake Forest, IL",
+    year: "2024",
+    categories: ["Healthcare"],
+    description:
+      "Part of the bed expansion project at Northwestern Lake Forest Hospital, the parking garage provides approximately 1,000 spaces to make up for the surface lots that were replaced as parcels for G & H Pavilions. Located adjacent to the Central Plant, the garage project includes relocation of the Helipad and relocation of utilities under the footprint of the garage.",
+    scope: [
+      "Site Development",
+      "Civil Engineering – Construction Documents",
+      "Parking Design",
+      "Site Circulation",
+      "Helipad Relocation",
+      "Utility Relocation",
+      "Construction Administration",
+      "Permitting",
+    ],
+    path: "/projects/nwmh/parking-garage",
+    image:
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/PARKING-GARAGE/parkinggarage.jpg",
+    video:
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/PARKING-GARAGE/cover.mp4",
+    additionalImages: [
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/PARKING-GARAGE/parkinggarage.jpg",
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/PARKING-GARAGE/nm_final_lake_forest_parking_1.webp",
+    ],
+    lat: 42.2565633343371,
+    lng: -87.86575969050139,
   },
 ];

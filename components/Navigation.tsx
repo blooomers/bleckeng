@@ -221,20 +221,20 @@ export default function Navigation() {
                           layout="vertical"
                         />
                       ))}
-                      <div className="col-span-2 border-t border-gray-100 pt-4 mt-2">
+                      <div className="col-span-2 border-t border-gray-200 pt-5 mt-4">
                         <Link
                           href="/projects"
-                          className="group flex items-center justify-between w-full p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                          className="group flex items-center justify-between w-full px-6 py-4 rounded-lg bg-[#893002] hover:bg-[#7a2a02] text-white transition-all duration-300 shadow-md hover:shadow-lg"
                         >
                           <div>
-                            <div className="text-sm font-semibold text-gray-900">
+                            <div className="text-base font-bold tracking-wide">
                               View All Projects
                             </div>
-                            <div className="text-xs text-gray-500 mt-0.5">
+                            <div className="text-xs text-white/90 mt-1">
                               Browse our complete portfolio across all sectors
                             </div>
                           </div>
-                          <ArrowRight className="w-4 h-4 text-[#893002] opacity-0 -translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0" />
+                          <ArrowRight className="w-5 h-5 text-white opacity-90 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                         </Link>
                       </div>
                     </div>
