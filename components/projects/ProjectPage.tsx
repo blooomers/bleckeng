@@ -133,8 +133,6 @@ export default function ProjectPage({
           ) : (
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#89300208_1px,transparent_1px),linear-gradient(to_bottom,#89300208_1px,transparent_1px)] bg-[size:6rem_6rem]" />
           )}
-          {/* Gradient Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-8 w-full">

@@ -128,7 +128,6 @@ export const projects: Project[] = [
     image:
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/FOREST-PARK/forest-park.jpg",
     additionalImages: [
-      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/FOREST-PARK/forest-park.jpg",
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/FOREST-PARK/forest-park1.jpg",
       "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/FOREST-PARK/forest-park2.jpg",
     ],
