@@ -298,7 +298,11 @@ export default function Home() {
             <h1 className="mb-4 sm:mb-5 md:mb-6 text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-white leading-tight sm:leading-tight">
               <span
                 key={currentServiceIndex}
-                className="inline-block animate-fade-in break-words"
+                className="inline-block animate-fade-in break-words tracking"
+                style={{
+                  textShadow:
+                    "0 4px 8px rgba(0, 0, 0, 0.5), 0 4px 16px rgba(0, 0, 0, 0.3)",
+                }}
               >
                 {services[currentServiceIndex]}
               </span>
