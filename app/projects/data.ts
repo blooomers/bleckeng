@@ -715,4 +715,32 @@ export const projects: Project[] = [
     lat: 42.25963590855198,
     lng: -87.84239847315271,
   },
+  {
+    id: 27,
+    title:
+      "Northwestern Medicine Lake Forest Hospital – Patient Care Pavilions",
+    location: "Lake Forest, IL",
+    year: "2024",
+    categories: ["Healthcare"],
+    description:
+      "The addition of two new patient care pavilions to the hospitals will allow us to significantly expand capacity and enhance patient care services. This expansion represents a major step forward in meeting the growing healthcare needs of the community. The project's architecture and design will complement the current design of the hospital and the surrounding landscape. Native plants and plentiful areas of green space will contribute to the healing environment of the campus, while walking trails away from construction areas will continue to be open to the public.",
+    scope: [
+      "Site Development",
+      "Civil Engineering – Construction Documents",
+      "Healthcare Facility Design",
+      "Emergency Department Expansion",
+      "Site Utilities",
+      "Landscape Design",
+      "Construction Administration",
+      "Permitting",
+    ],
+    path: "/projects/nwmh/pavilion",
+    image:
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/Pavilion-Rendering.png",
+    additionalImages: [
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/PAVILLION/MINP3622.JPG",
+    ],
+    lat: 42.2565633343371,
+    lng: -87.86575969050139,
+  },
 ];

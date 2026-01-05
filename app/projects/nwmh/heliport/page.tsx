@@ -59,15 +59,10 @@ export default function NwmhHeliportPage() {
             href="/contact"
             className="inline-flex items-center gap-3 border border-gray-900 bg-transparent px-6 py-3 text-xs font-bold uppercase tracking-widest text-gray-900 transition-colors hover:bg-gray-900 hover:text-white"
           >
-            Ask about this scope <ArrowRight size={14} />
+            Ask about this project <ArrowRight size={14} />
           </Link>
         </div>
       </section>
     </div>
   );
 }
-
-
-
-
-

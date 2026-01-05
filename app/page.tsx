@@ -155,12 +155,39 @@ export default function Home() {
     setShowLoadingUI(false);
   };
 
-  const recentProjects = [
+  const featuredProjects = [
+    {
+      id: 22,
+      title: "Northwestern Medicine Lake Forest Hospital",
+      categories: "Healthcare, Master Planning",
+      location: "Lake Forest, IL",
+      year: "2012-2026",
+      description:
+        "A comprehensive program-level overview of long-term civil engineering and planning support for the Northwestern Medicine Lake Forest Hospital campus.",
+      image:
+        "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/exterior_rendering_1_-_6.1.2022.png",
+      href: "/projects/nwmh",
+    },
     {
       id: 1,
+      title: "USDA National Nursery System Optimization Planning",
+      categories: "Master Planning",
+      location: "National (8 Locations)",
+      year: "2024",
+      description:
+        "Providing master planning services to prepare the U.S. Forest Service for the future and meet REPLANT Act targets.",
+      image:
+        "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/USDA/Lucky%20Peak/5734200698_e48e24924d.webp",
+      href: "/projects/usda-nursery",
+    },
+  ];
+
+  const recentProjects = [
+    {
+      id: 24,
       title: "McKinley Condominium Residences",
-      subtitle: "Residential Development",
-      location: "Lake Forest, Illinois",
+      categories: "Residential",
+      location: "Lake Forest, IL",
       year: "2018-2026",
       description:
         "Premier downtown Lake Forest homes offering luxury living just steps from local dining, shops, parks, and commuter transit.",
@@ -169,40 +196,40 @@ export default function Home() {
       href: "/projects/mckinley-condominium-development",
     },
     {
-      id: 2,
-      title: "Northwestern Medicine Lake Forest Hospital",
-      subtitle: "Parking Garage",
-      location: "Lake Forest, Illinois",
-      year: "2024",
-      description: "",
-      image:
-        "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/parkinggarage.jpg",
-      href: "/projects/nwmh/parking-garage",
-    },
-    {
-      id: 3,
-      title: "USDA National Nursery System",
-      subtitle: "Optimization Planning",
-      location: "U.S. Forest Service, Various States",
-      year: "2024",
-      description:
-        "Providing master planning services to prepare us for the future and meeting the REPLANT Act targets.",
-      image:
-        "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/USDA/Lucky%20Peak/5734200698_e48e24924d.webp",
-      href: "/projects/usda-nursery",
-    },
-
-    {
-      id: 4,
+      id: 26,
       title: "Kelmscott Park",
-      subtitle: "Mixed-Use Residential Development",
-      location: "Lake Forest, Illinois",
+      categories: "Residential, Master Planning",
+      location: "Lake Forest, IL",
       year: "2025",
       description:
-        "A thoughtfully planned mixed-use residential development transforming municipal land into a vibrant, walkable neighborhood in downtown Lake Forest.",
+        "A thoughtfully planned mixed-use residential development transforming municipal land into a vibrant, walkable neighborhood.",
       image:
         "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/KELMSCOTT/GA5A4842.jpg",
       href: "/projects/kelmscott-park",
+    },
+    {
+      id: 25,
+      title: "Northwestern Medicine Lake Forest Hospital – Parking Garage",
+      categories: "Healthcare",
+      location: "Lake Forest, IL",
+      year: "2024",
+      description:
+        "Part of the bed expansion project providing approximately 1,000 parking spaces to support hospital operations.",
+      image:
+        "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/PARKING-GARAGE/parkinggarage.jpg",
+      href: "/projects/nwmh/parking-garage",
+    },
+    {
+      id: 27,
+      title: "Pavilion Expansion",
+      categories: "Healthcare",
+      location: "Lake Forest, IL",
+      year: "2024",
+      description:
+        "Pavilion-area improvements and pedestrian connectivity within the overall campus revitalization.",
+      image:
+        "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/hospital.jpg",
+      href: "/projects/nwmh/pavilion",
     },
   ];
 
@@ -630,87 +657,133 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Recent Projects */}
-      <section className="border-t border-gray-100 bg-white py-32">
-        <div className="mx-auto max-w-7xl px-8">
-          <div className="mb-20 text-center">
-            <div className="mb-6 inline-block">
+      {/* Recent Projects - Compact Professional Layout */}
+      <section className="relative border-t border-gray-100 bg-white py-8 sm:py-12 md:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+          <div className="mb-8 sm:mb-10">
+            <div className="mb-3 inline-block">
               <div className="flex items-center gap-3 text-xs font-light tracking-[0.3em] text-gray-400 uppercase">
                 <div className="h-px w-8 bg-gradient-to-r from-transparent to-[#893002]"></div>
                 Portfolio
                 <div className="h-px w-8 bg-gradient-to-l from-transparent to-[#893002]"></div>
               </div>
             </div>
-            <h2 className="mb-6 text-4xl font-light text-gray-900 md:text-5xl">
-              Recent Projects
+            <h2 className="mb-3 text-2xl sm:text-3xl md:text-4xl font-light text-gray-900">
+              Featured Work
             </h2>
-            <p className="mx-auto max-w-2xl font-light leading-relaxed text-gray-600">
-              Creating spaces for the public to enjoy and improving
-              <br className="hidden md:block" />
-              community health and safety
+            <p className="max-w-2xl font-light text-gray-600 text-sm sm:text-base">
+              Transforming communities through thoughtful design and engineering
+              excellence
             </p>
           </div>
 
-          <div className="grid gap-px bg-gray-100 md:grid-cols-2 lg:grid-cols-4">
-            {recentProjects.map((project) => (
-              <div
+          {/* Featured Projects Grid - 2 Column */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+            {featuredProjects.map((project, index) => (
+              <Link
                 key={project.id}
-                className="group bg-white transition-all duration-300 hover:bg-gray-50"
+                href={project.href}
+                className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
-                  {project.image ? (
-                    <>
-                      <ProjectImage src={project.image} alt={project.title} />
-                      <div className="absolute inset-0 bg-[#893002]/0 transition-all duration-500 group-hover:bg-[#893002]/10" />
-                    </>
-                  ) : (
-                    <>
-                      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#893002]/5 to-gray-100">
-                        <Building2
-                          className="text-gray-300"
-                          size={64}
-                          strokeWidth={1}
-                        />
-                      </div>
-                      <div className="absolute inset-0 bg-[#893002]/0 transition-all duration-500 group-hover:bg-[#893002]/5" />
-                    </>
-                  )}
+                <div className="relative h-[280px] sm:h-[320px] lg:h-[360px] overflow-hidden bg-gray-900">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-all duration-500 group-hover:scale-105"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority={index === 0}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
                 </div>
-                <div className="p-8">
-                  <div className="mb-2 flex items-center gap-2 text-xs font-light tracking-wider text-gray-400 uppercase">
-                    <div className="h-px w-4 bg-[#893002]"></div>
-                    {project.year}
+
+                <div className="absolute inset-0 flex flex-col justify-end p-5 sm:p-6">
+                  <div className="mb-3 flex flex-wrap items-center gap-2">
+                    <span className="px-2.5 py-1 bg-white/10 backdrop-blur-sm rounded text-xs font-light text-white uppercase tracking-wider">
+                      {project.categories}
+                    </span>
+                    <span className="px-2.5 py-1 bg-[#893002]/90 rounded text-xs font-light text-white uppercase tracking-wider">
+                      {project.year}
+                    </span>
                   </div>
-                  <h3 className="mb-1 text-xl font-light text-gray-900">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-light text-white mb-2 group-hover:text-[#ffb899] transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <p className="mb-2 text-sm font-light text-gray-500">
-                    {project.subtitle}
-                  </p>
-                  <p className="mb-1 text-xs font-light text-gray-400">
+                  <p className="text-sm font-light text-white/90 mb-3">
                     {project.location}
                   </p>
-                  <p className="mb-6 font-light leading-relaxed text-gray-600 text-sm">
-                    {project.description}
-                  </p>
-                  <Link
-                    href={project.href}
-                    className="inline-flex items-center gap-2 text-sm font-light text-[#893002] transition-all hover:gap-3"
-                  >
-                    View Project <ArrowRight size={14} strokeWidth={1.5} />
-                  </Link>
+                  <div className="flex items-center gap-2 text-sm font-light text-white group-hover:gap-3 transition-all duration-300">
+                    <span>View Project</span>
+                    <ArrowRight
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                      size={16}
+                      strokeWidth={1.5}
+                    />
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
-          <div className="mt-16 text-center">
+          {/* Recent Projects Grid - 4 Column */}
+          <div className="mb-6 sm:mb-8">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-light text-gray-900 mb-4 sm:mb-6">
+              Recent Work
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+              {recentProjects.map((project, index) => (
+                <Link
+                  key={project.id}
+                  href={project.href}
+                  className="group relative overflow-hidden rounded-lg bg-white border border-gray-200 hover:border-[#893002]/50 shadow-sm hover:shadow-md transition-all duration-300"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-all duration-500 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                  </div>
+
+                  <div className="p-4">
+                    <div className="mb-2 flex items-center justify-between">
+                      <span className="text-xs font-light text-gray-400 uppercase tracking-wider">
+                        {project.categories.split(",")[0]}
+                      </span>
+                      <span className="text-xs font-light text-gray-400">
+                        {project.year}
+                      </span>
+                    </div>
+                    <h4 className="text-base font-light text-gray-900 mb-1.5 group-hover:text-[#893002] transition-colors duration-300 line-clamp-2">
+                      {project.title}
+                    </h4>
+                    <p className="text-xs font-light text-gray-600 mb-3 line-clamp-1">
+                      {project.location}
+                    </p>
+                    <div className="flex items-center gap-1.5 text-xs font-light text-[#893002] transition-all group-hover:gap-2">
+                      <span>View</span>
+                      <ArrowRight size={12} strokeWidth={1.5} />
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* View All Projects CTA */}
+          <div className="text-center">
             <Link
               href="/projects"
-              className="inline-flex items-center gap-3 border border-[#893002] bg-[#893002] px-10 py-4 text-sm font-light tracking-wide text-white transition-all duration-300  hover:bg-[#wwa03a03]"
+              className="group inline-flex items-center gap-3 border border-[#893002] bg-transparent px-8 py-3 text-sm font-light tracking-wide text-[#893002] transition-all duration-300 hover:bg-[#893002] hover:text-white"
             >
-              View All Projects
-              <ArrowRight size={18} strokeWidth={1.5} />
+              <span>Explore All Projects</span>
+              <ArrowRight
+                className="transition-transform duration-300 group-hover:translate-x-1"
+                size={16}
+                strokeWidth={1.5}
+              />
             </Link>
           </div>
         </div>
