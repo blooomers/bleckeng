@@ -336,10 +336,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section className="border-t border-gray-100 bg-white py-20 sm:py-24 md:py-32">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-          <div className="mb-12 sm:mb-16 md:mb-20 text-center">
+      {/* Services Overview - Elevated Design */}
+      <section className="relative border-t border-gray-100 bg-gradient-to-b from-white to-gray-50 py-20 sm:py-24 md:py-32 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 opacity-30 pointer-events-none">
+          <div className="absolute top-20 right-0 w-96 h-96 bg-[#893002]/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 left-0 w-96 h-96 bg-[#893002]/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+          <div className="mb-16 sm:mb-20 md:mb-24">
             <div className="mb-6 inline-block">
               <div className="flex items-center gap-3 text-xs font-light tracking-[0.3em] text-gray-400 uppercase">
                 <div className="h-px w-8 bg-gradient-to-r from-transparent to-[#893002]"></div>
@@ -347,155 +353,278 @@ export default function Home() {
                 <div className="h-px w-8 bg-gradient-to-l from-transparent to-[#893002]"></div>
               </div>
             </div>
-            <h2 className="mb-6 text-3xl sm:text-4xl md:text-5xl font-light text-gray-900">
-              Our Expertise
+            <h2 className="mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-gray-900">
+              What We Do Best
             </h2>
-            <p className="mx-auto max-w-2xl font-light leading-relaxed text-gray-600 text-sm sm:text-base">
-              Comprehensive civil engineering and land surveying services
-              <br className="hidden md:block" />
-              tailored to your needs
+            <p className="max-w-2xl font-light leading-relaxed text-gray-600 text-base sm:text-lg">
+              Four core services. Decades of excellence. One commitment to
+              transforming visions into reality.
             </p>
           </div>
 
-          <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
-            {/* Civil Engineering */}
+          {/* 2x2 Grid - All Cards with Diagonal Split Style */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+            {/* Civil Engineering - Diagonal Left */}
             <Link
               href="/services/civil-engineering"
-              className="group relative overflow-hidden bg-white border border-gray-200 transition-all duration-500 hover:shadow-xl hover:border-[#893002]/20 hover:-translate-y-1"
+              className="group relative block overflow-hidden rounded-xl shadow-lg"
             >
-              <div className="relative aspect-[3/2] overflow-hidden bg-gray-100">
-                <img
+              <div className="relative h-[500px] sm:h-[600px] lg:h-[550px] overflow-hidden bg-gray-900 rounded-xl">
+                <Image
+                  fill
                   src="https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/hospital.jpg"
                   alt="Civil Engineering"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="absolute inset-0 h-full w-full object-cover transition-all duration-[1200ms] ease-out group-hover:scale-110 group-hover:rotate-1"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
-              <div className="p-6 sm:p-8">
-                <div className="mb-3">
-                  <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-1.5 group-hover:text-[#893002] transition-colors duration-300">
-                    Civil Engineering
-                  </h3>
-                  <p className="text-xs sm:text-sm font-light text-gray-500 uppercase tracking-wide">
-                    Site planning, development & infrastructure
-                  </p>
+
+                {/* Diagonal Overlay - Slides from left */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-[#893002] via-[#6b2501] to-[#4a1901] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-1000 ease-out"
+                  style={{ clipPath: "polygon(0 0, 55% 0, 45% 100%, 0 100%)" }}
+                ></div>
+
+                {/* Large Number */}
+                <div className="absolute top-6 left-6 sm:top-10 sm:left-10 lg:top-12 lg:left-12">
+                  <span className="text-[120px] sm:text-[180px] lg:text-[200px] font-bold leading-none text-white/10 group-hover:text-white/20 transition-colors duration-700">
+                    01
+                  </span>
                 </div>
-                <p className="mb-5 sm:mb-6 font-light leading-relaxed text-gray-600 text-sm sm:text-base">
-                  Comprehensive services for government, public facilities and
-                  private developers since 1945.
-                </p>
-                <span className="inline-flex items-center gap-2 text-sm font-light text-[#893002] transition-all group-hover:gap-3">
-                  See more <ArrowRight size={14} strokeWidth={1.5} />
-                </span>
+
+                {/* Content */}
+                <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-10 lg:p-12">
+                  <div className="max-w-2xl">
+                    <div className="mb-4 inline-flex items-center gap-3">
+                      <div className="h-px w-12 bg-white"></div>
+                      <span className="text-xs sm:text-sm font-light text-white/90 uppercase tracking-[0.2em]">
+                        Site Planning & Infrastructure
+                      </span>
+                    </div>
+                    <h3
+                      style={{
+                        textShadow:
+                          "0 4px 8px rgba(0, 0, 0, 0.5), 0 4px 16px rgba(0, 0, 0, 0.3)",
+                      }}
+                      className="text-3xl sm:text-4xl lg:text-5xl  font-medium text-white mb-4 sm:mb-6 tracking-tight"
+                    >
+                      Civil Engineering
+                    </h3>
+                    <p className="text-base sm:text-lg font-light text-white/90 mb-6 sm:mb-8 max-w-xl leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-6 group-hover:translate-y-0 transition-all duration-700 delay-200">
+                      Comprehensive civil engineering services for government,
+                      public facilities, and private developers. Building the
+                      foundations of tomorrow since 1945.
+                    </p>
+                    <div className="flex items-center gap-3 text-white text-sm sm:text-base font-light group-hover:gap-4 transition-all duration-300">
+                      <span>Explore Service</span>
+                      <ArrowRight
+                        className="transition-transform duration-300 group-hover:translate-x-2"
+                        size={20}
+                        strokeWidth={1.5}
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </Link>
 
-            {/* Land Surveying */}
+            {/* Land Surveying - Diagonal Right */}
             <Link
               href="/services/land-surveying"
-              className="group relative overflow-hidden bg-white border border-gray-200 transition-all duration-500 hover:shadow-xl hover:border-[#893002]/20 hover:-translate-y-1"
+              className="group relative block overflow-hidden rounded-xl shadow-lg"
             >
-              <div className="relative aspect-[3/2] overflow-hidden bg-gray-100">
+              <div className="relative h-[500px] sm:h-[600px] lg:h-[550px] overflow-hidden bg-gray-900 rounded-xl">
                 <img
                   src="https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/services/surveying1.jpg"
                   alt="Land Surveying"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="absolute inset-0 h-full w-full object-cover transition-all duration-[1200ms] ease-out group-hover:scale-110 group-hover:rotate-[-1deg]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
-              <div className="p-6 sm:p-8">
-                <div className="mb-3">
-                  <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-1.5 group-hover:text-[#893002] transition-colors duration-300">
-                    Land Surveying
-                  </h3>
-                  <p className="text-xs sm:text-sm font-light text-gray-500 uppercase tracking-wide">
-                    Professional surveying & mapping services
-                  </p>
+
+                {/* Diagonal Overlay - Slides from right */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-bl from-[#893002] via-[#6b2501] to-[#4a1901] translate-x-[100%] group-hover:translate-x-0 transition-transform duration-1000 ease-out"
+                  style={{
+                    clipPath: "polygon(45% 0, 100% 0, 100% 100%, 55% 100%)",
+                  }}
+                ></div>
+
+                {/* Large Number */}
+                <div className="absolute top-6 right-6 sm:top-10 sm:right-10 lg:top-12 lg:right-12">
+                  <span className="text-[120px] sm:text-[180px] lg:text-[200px] font-bold leading-none text-white/10 group-hover:text-white/20 transition-colors duration-700">
+                    02
+                  </span>
                 </div>
-                <p className="mb-5 sm:mb-6 font-light leading-relaxed text-gray-600 text-sm sm:text-base">
-                  In-house survey staff providing reliable, accurate field
-                  information and topographic mapping.
-                </p>
-                <span className="inline-flex items-center gap-2 text-sm font-light text-[#893002] transition-all group-hover:gap-3">
-                  See more <ArrowRight size={14} strokeWidth={1.5} />
-                </span>
+
+                {/* Content */}
+                <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-10 lg:p-12">
+                  <div className="max-w-2xl ml-auto text-right">
+                    <div className="mb-4 inline-flex items-center gap-3">
+                      <span className="text-xs sm:text-sm font-light text-white/90 uppercase tracking-[0.2em]">
+                        Professional Surveying & Mapping
+                      </span>
+                      <div className="h-px w-12 bg-white"></div>
+                    </div>
+                    <h3
+                      style={{
+                        textShadow:
+                          "0 4px 8px rgba(0, 0, 0, 0.5), 0 4px 16px rgba(0, 0, 0, 0.3)",
+                      }}
+                      className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white mb-4 sm:mb-6 tracking-tight"
+                    >
+                      Land Surveying
+                    </h3>
+                    <p className="text-base sm:text-lg font-light text-white/90 mb-6 sm:mb-8 max-w-xl ml-auto leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-6 group-hover:translate-y-0 transition-all duration-700 delay-200">
+                      In-house survey staff providing reliable, accurate field
+                      information and topographic mapping for your projects.
+                    </p>
+                    <div className="flex items-center justify-end gap-3 text-white text-sm sm:text-base font-light group-hover:gap-4 transition-all duration-300">
+                      <span>Explore Service</span>
+                      <ArrowRight
+                        className="transition-transform duration-300 group-hover:translate-x-2"
+                        size={20}
+                        strokeWidth={1.5}
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </Link>
 
-            {/* Construction Administration */}
+            {/* Construction Management - Diagonal Left */}
             <Link
               href="/services/construction-management"
-              className="group relative overflow-hidden bg-white border border-gray-200 transition-all duration-500 hover:shadow-xl hover:border-[#893002]/20 hover:-translate-y-1"
+              className="group relative block overflow-hidden rounded-xl shadow-lg"
             >
-              <div className="relative aspect-[3/2] overflow-hidden bg-gray-100">
+              <div className="relative h-[500px] sm:h-[600px] lg:h-[550px] overflow-hidden bg-gray-900 rounded-xl">
                 <img
                   src="https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/services/IMG_3356-2.jpg"
                   alt="Construction Management"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="absolute inset-0 h-full w-full object-cover transition-all duration-[1200ms] ease-out group-hover:scale-110 group-hover:rotate-1"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
-              <div className="p-6 sm:p-8">
-                <div className="mb-3">
-                  <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-1.5 group-hover:text-[#893002] transition-colors duration-300">
-                    Construction Management
-                  </h3>
-                  <p className="text-xs sm:text-sm font-light text-gray-500 uppercase tracking-wide">
-                    End-to-end project management
-                  </p>
+
+                {/* Diagonal Overlay - Slides from left */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-[#893002] via-[#6b2501] to-[#4a1901] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-1000 ease-out"
+                  style={{ clipPath: "polygon(0 0, 55% 0, 45% 100%, 0 100%)" }}
+                ></div>
+
+                {/* Large Number */}
+                <div className="absolute top-6 left-6 sm:top-10 sm:left-10 lg:top-12 lg:left-12">
+                  <span className="text-[120px] sm:text-[180px] lg:text-[200px] font-bold leading-none text-white/10 group-hover:text-white/20 transition-colors duration-700">
+                    03
+                  </span>
                 </div>
-                <p className="mb-5 sm:mb-6 font-light leading-relaxed text-gray-600 text-sm sm:text-base">
-                  Continuity of service with one project manager from start to
-                  finish, ensuring high-level coordination for complex projects.
-                </p>
-                <span className="inline-flex items-center gap-2 text-sm font-light text-[#893002] transition-all group-hover:gap-3">
-                  See more <ArrowRight size={14} strokeWidth={1.5} />
-                </span>
+
+                {/* Content */}
+                <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-10 lg:p-12">
+                  <div className="max-w-2xl">
+                    <div className="mb-4 inline-flex items-center gap-3">
+                      <div className="h-px w-12 bg-white"></div>
+                      <span className="text-xs sm:text-sm font-light text-white/90 uppercase tracking-[0.2em]">
+                        End-to-End Project Management
+                      </span>
+                    </div>
+                    <h3
+                      style={{
+                        textShadow:
+                          "0 4px 8px rgba(0, 0, 0, 0.5), 0 4px 16px rgba(0, 0, 0, 0.3)",
+                      }}
+                      className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white mb-4 sm:mb-6 tracking-tight"
+                    >
+                      Construction Management
+                    </h3>
+                    <p className="text-base sm:text-lg font-light text-white/90 mb-6 sm:mb-8 max-w-xl leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-6 group-hover:translate-y-0 transition-all duration-700 delay-200">
+                      Continuity of service with one project manager from start
+                      to finish, ensuring high-level coordination for complex
+                      projects.
+                    </p>
+                    <div className="flex items-center gap-3 text-white text-sm sm:text-base font-light group-hover:gap-4 transition-all duration-300">
+                      <span>Explore Service</span>
+                      <ArrowRight
+                        className="transition-transform duration-300 group-hover:translate-x-2"
+                        size={20}
+                        strokeWidth={1.5}
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </Link>
 
-            {/* Design Build */}
+            {/* Design Build - Diagonal Right */}
             <Link
               href="/services/design-build"
-              className="group relative overflow-hidden bg-white border border-gray-200 transition-all duration-500 hover:shadow-xl hover:border-[#893002]/20 hover:-translate-y-1"
+              className="group relative block overflow-hidden rounded-xl shadow-lg"
             >
-              <div className="relative aspect-[3/2] overflow-hidden bg-gray-100">
+              <div className="relative h-[500px] sm:h-[600px] lg:h-[550px] overflow-hidden bg-gray-900 rounded-xl">
                 <img
                   src="https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/services/L1230468%20(1).jpg"
                   alt="Design Build"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="absolute inset-0 h-full w-full object-cover transition-all duration-[1200ms] ease-out group-hover:scale-110 group-hover:rotate-[-1deg]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
-              <div className="p-6 sm:p-8">
-                <div className="mb-3">
-                  <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-1.5 group-hover:text-[#893002] transition-colors duration-300">
-                    Design Build
-                  </h3>
-                  <p className="text-xs sm:text-sm font-light text-gray-500 uppercase tracking-wide">
-                    One entity, one contract, unified workflow
-                  </p>
+
+                {/* Diagonal Overlay - Slides from right */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-bl from-[#893002] via-[#6b2501] to-[#4a1901] translate-x-[100%] group-hover:translate-x-0 transition-transform duration-1000 ease-out"
+                  style={{
+                    clipPath: "polygon(45% 0, 100% 0, 100% 100%, 55% 100%)",
+                  }}
+                ></div>
+
+                {/* Large Number */}
+                <div className="absolute top-6 right-6 sm:top-10 sm:right-10 lg:top-12 lg:right-12">
+                  <span className="text-[120px] sm:text-[180px] lg:text-[200px] font-bold leading-none text-white/10 group-hover:text-white/20 transition-colors duration-700">
+                    04
+                  </span>
                 </div>
-                <p className="mb-5 sm:mb-6 font-light leading-relaxed text-gray-600 text-sm sm:text-base">
-                  Streamlined project delivery from initial design through
-                  completion of construction, reducing project delivery
-                  schedule.
-                </p>
-                <span className="inline-flex items-center gap-2 text-sm font-light text-[#893002] transition-all group-hover:gap-3">
-                  See more <ArrowRight size={14} strokeWidth={1.5} />
-                </span>
+
+                {/* Content */}
+                <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-10 lg:p-12">
+                  <div className="max-w-2xl ml-auto text-right">
+                    <div className="mb-4 inline-flex items-center gap-3">
+                      <span className="text-xs sm:text-sm font-light text-white/90 uppercase tracking-[0.2em]">
+                        Unified Workflow & Delivery
+                      </span>
+                      <div className="h-px w-12 bg-white"></div>
+                    </div>
+                    <h3
+                      style={{
+                        textShadow:
+                          "0 4px 8px rgba(0, 0, 0, 0.5), 0 4px 16px rgba(0, 0, 0, 0.3)",
+                      }}
+                      className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white mb-4 sm:mb-6 tracking-tight"
+                    >
+                      Design Build
+                    </h3>
+                    <p className="text-base sm:text-lg font-light text-white/90 mb-6 sm:mb-8 max-w-xl ml-auto leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-6 group-hover:translate-y-0 transition-all duration-700 delay-200">
+                      Streamlined project delivery from initial design through
+                      completion of construction, reducing project delivery
+                      schedule.
+                    </p>
+                    <div className="flex items-center justify-end gap-3 text-white text-sm sm:text-base font-light group-hover:gap-4 transition-all duration-300">
+                      <span>Explore Service</span>
+                      <ArrowRight
+                        className="transition-transform duration-300 group-hover:translate-x-2"
+                        size={20}
+                        strokeWidth={1.5}
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </Link>
           </div>
 
           {/* View All Services CTA */}
-          <div className="mt-12 sm:mt-16 text-center">
+          <div className="mt-16 sm:mt-20 lg:mt-24 text-center">
             <Link
               href="/services"
-              className="inline-flex items-center gap-3 border border-[#893002] bg-[#893002] px-8 sm:px-10 py-3 sm:py-4 text-xs sm:text-sm font-light tracking-wide text-white transition-all duration-300 hover:bg-[#a03a03] hover:shadow-lg"
+              className="group inline-flex items-center gap-4 border-2 border-[#893002] bg-transparent px-10 sm:px-12 py-4 sm:py-5 text-sm sm:text-base font-light tracking-wide text-[#893002] transition-all duration-500 hover:bg-[#893002] hover:text-white hover:shadow-2xl hover:shadow-[#893002]/20 hover:-translate-y-1"
             >
-              View All Services
-              <ArrowRight size={16} strokeWidth={1.5} />
+              <span>Explore All Services</span>
+              <ArrowRight
+                className="transition-transform duration-300 group-hover:translate-x-2"
+                size={20}
+                strokeWidth={1.5}
+              />
             </Link>
           </div>
         </div>
