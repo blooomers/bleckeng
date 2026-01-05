@@ -221,14 +221,14 @@ export default function Home() {
     },
     {
       id: 27,
-      title: "Pavilion Expansion",
+      title: "North Western Medicine Lake Forest Hospital – Pavilion Expansion",
       categories: "Healthcare",
       location: "Lake Forest, IL",
-      year: "2024",
+      year: "2025",
       description:
         "Pavilion-area improvements and pedestrian connectivity within the overall campus revitalization.",
       image:
-        "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/hospital.jpg",
+        "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/NWMH/Pavilion-Rendering.png",
       href: "/projects/nwmh/pavilion",
     },
   ];
