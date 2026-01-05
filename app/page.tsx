@@ -194,15 +194,15 @@ export default function Home() {
 
     {
       id: 4,
-      title: "Waukegan Community Bank",
-      subtitle: "Commercial Development",
-      location: "Waukegan, Illinois",
-      year: "2023",
+      title: "Kelmscott Park",
+      subtitle: "Mixed-Use Residential Development",
+      location: "Lake Forest, Illinois",
+      year: "2025",
       description:
-        "Helping to improve your community one development at a time.",
+        "A thoughtfully planned mixed-use residential development transforming municipal land into a vibrant, walkable neighborhood in downtown Lake Forest.",
       image:
-        "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/WAUKEGAN-COMMUNITY-BANK/waukegan-bank.png",
-      href: "/projects/waukegan-bank",
+        "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/KELMSCOTT/GA5A4842.jpg",
+      href: "/projects/kelmscott-park",
     },
   ];
 

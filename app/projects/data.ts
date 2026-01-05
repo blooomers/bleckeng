@@ -676,4 +676,43 @@ export const projects: Project[] = [
     lat: 42.2565633343371,
     lng: -87.86575969050139,
   },
+  {
+    id: 26,
+    title: "Kelmscott Park",
+    location:
+      "Laurel Avenue, Western Avenue & Franklin Place, Lake Forest, Illinois",
+    year: "2025",
+    categories: ["Residential", "Master Planning"],
+    description:
+      "Kelmscott Park is a thoughtfully planned mixed-use residential development near the Central Business District of Lake Forest, Illinois. Redeveloped on the former City of Lake Forest Public Works site, the project transformed municipal land into a vibrant, walkable neighborhood that supports the city's long-term vision for downtown reinvestment.\n\nThe development delivers 164 residential units, including three apartment buildings with 110 luxury apartments and underground parking, two condominium buildings with 42 residences with underground parking, and 12 single-family homes. This diverse mix of housing types creates a balanced residential community while remaining fully compatible with the architectural character and scale of Lake Forest.\n\nThe project incorporates underground parking structures to support residential density while minimizing visual impacts and enhancing the pedestrian experience. A prominent corner of the site was preserved as public open space—now known as Franklin Park—providing a meaningful community amenity and reinforcing the project's commitment to placemaking. The project also preserved a majestic 54\" swamp white oak dating back to prior to the incorporation of the City of Lake Forest in 1860.\n\nWith direct access to downtown amenities, transit, and local services, Kelmscott Park exemplifies successful urban infill redevelopment. The final condominium phase was completed in 2025, marking the full realization of a carefully phased, mixed-use neighborhood that strengthens the fabric of downtown Lake Forest.",
+    scope: [
+      "Master Planning",
+      "Surveying",
+      "Topographic Survey",
+      "Civil Engineering – Construction Documents",
+      "Site Development",
+      "Residential Development",
+      "Mixed-Use Development",
+      "Underground Parking Design",
+      "Public Open Space Design",
+      "Multi-Phase Development",
+      "Architectural Coordination",
+      "Permitting",
+      "Construction Engineering / Administration",
+      "Construction Staking and Layout",
+    ],
+    path: "/projects/kelmscott-park",
+    image:
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/KELMSCOTT/GA5A4842.jpg",
+    video:
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/KELMSCOTT/cover.mp4",
+    additionalImages: [
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/KELMSCOTT/GA5A4838.jpg",
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/KELMSCOTT/GA5A4886.jpg",
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/KELMSCOTT/GA5A4913.jpg",
+      "https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/KELMSCOTT/GA5A4920.jpg",
+    ],
+    lat: 42.25963590855198,
+    lng: -87.84239847315271,
+  },
 ];
