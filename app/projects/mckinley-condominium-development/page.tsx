@@ -8,4 +8,3 @@ export default function McKinleyCondominiumDevelopmentPage() {
   if (!project) return null;
   return <ProjectPage project={project} allProjects={projects} />;
 }
-

@@ -404,11 +404,10 @@ export default function Home() {
                   className="absolute inset-0 h-full w-full object-cover transition-all duration-[1200ms] ease-out group-hover:scale-110 group-hover:rotate-1"
                 />
 
-                {/* Diagonal Overlay - Slides from left */}
-                <div
-                  className="absolute inset-0 bg-gradient-to-br from-[#893002] via-[#6b2501] to-[#4a1901] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-1000 ease-out"
-                  style={{ clipPath: "polygon(0 0, 55% 0, 45% 100%, 0 100%)" }}
-                ></div>
+                {/* Gradient Overlay - Full box, appears on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#893002] via-[#6b2501] to-[#4a1901] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out"></div>
+                {/* Solid Red Overlay - Appears after gradient fills */}
+                <div className="absolute inset-0 bg-[#893002] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out delay-500"></div>
 
                 {/* Large Number */}
                 <div className="absolute top-6 left-6 sm:top-10 sm:left-10 lg:top-12 lg:left-12">
@@ -465,13 +464,10 @@ export default function Home() {
                   className="absolute inset-0 h-full w-full object-cover transition-all duration-[1200ms] ease-out group-hover:scale-110 group-hover:rotate-[-1deg]"
                 />
 
-                {/* Diagonal Overlay - Slides from right */}
-                <div
-                  className="absolute inset-0 bg-gradient-to-bl from-[#893002] via-[#6b2501] to-[#4a1901] translate-x-[100%] group-hover:translate-x-0 transition-transform duration-1000 ease-out"
-                  style={{
-                    clipPath: "polygon(45% 0, 100% 0, 100% 100%, 55% 100%)",
-                  }}
-                ></div>
+                {/* Gradient Overlay - Full box, appears on hover */}
+                <div className="absolute inset-0 bg-gradient-to-bl from-[#893002] via-[#6b2501] to-[#4a1901] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out"></div>
+                {/* Solid Red Overlay - Appears after gradient fills */}
+                <div className="absolute inset-0 bg-[#893002] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out delay-500"></div>
 
                 {/* Large Number */}
                 <div className="absolute top-6 right-6 sm:top-10 sm:right-10 lg:top-12 lg:right-12">
@@ -527,11 +523,10 @@ export default function Home() {
                   className="absolute inset-0 h-full w-full object-cover transition-all duration-[1200ms] ease-out group-hover:scale-110 group-hover:rotate-1"
                 />
 
-                {/* Diagonal Overlay - Slides from left */}
-                <div
-                  className="absolute inset-0 bg-gradient-to-br from-[#893002] via-[#6b2501] to-[#4a1901] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-1000 ease-out"
-                  style={{ clipPath: "polygon(0 0, 55% 0, 45% 100%, 0 100%)" }}
-                ></div>
+                {/* Gradient Overlay - Full box, appears on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#893002] via-[#6b2501] to-[#4a1901] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out"></div>
+                {/* Solid Red Overlay - Appears after gradient fills */}
+                <div className="absolute inset-0 bg-[#893002] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out delay-500"></div>
 
                 {/* Large Number */}
                 <div className="absolute top-6 left-6 sm:top-10 sm:left-10 lg:top-12 lg:left-12">
@@ -588,13 +583,10 @@ export default function Home() {
                   className="absolute inset-0 h-full w-full object-cover transition-all duration-[1200ms] ease-out group-hover:scale-110 group-hover:rotate-[-1deg]"
                 />
 
-                {/* Diagonal Overlay - Slides from right */}
-                <div
-                  className="absolute inset-0 bg-gradient-to-bl from-[#893002] via-[#6b2501] to-[#4a1901] translate-x-[100%] group-hover:translate-x-0 transition-transform duration-1000 ease-out"
-                  style={{
-                    clipPath: "polygon(45% 0, 100% 0, 100% 100%, 55% 100%)",
-                  }}
-                ></div>
+                {/* Gradient Overlay - Full box, appears on hover */}
+                <div className="absolute inset-0 bg-gradient-to-bl from-[#893002] via-[#6b2501] to-[#4a1901] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out"></div>
+                {/* Solid Red Overlay - Appears after gradient fills */}
+                <div className="absolute inset-0 bg-[#893002] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out delay-500"></div>
 
                 {/* Large Number */}
                 <div className="absolute top-6 right-6 sm:top-10 sm:right-10 lg:top-12 lg:right-12">
