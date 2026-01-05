@@ -547,7 +547,7 @@ export const projects: Project[] = [
     id: 21,
     title: "Northwestern Medicine Grayslake – Outpatient Facility",
     location: "Grayslake, IL",
-    year: "TBD",
+    year: "2004",
     categories: ["Healthcare"],
     description:
       "Site civil engineering services for Northwestern Medicine's outpatient facility in Grayslake.",

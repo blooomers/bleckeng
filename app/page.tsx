@@ -282,7 +282,7 @@ export default function Home() {
             onError={handleVideoError}
           >
             <source
-              src="https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/landingpage-c.mp4"
+              src="https://pub-69400ea9236340e29bb7494ac2f4a975.r2.dev/landing-slow.mp4"
               type="video/mp4"
             />
           </video>
